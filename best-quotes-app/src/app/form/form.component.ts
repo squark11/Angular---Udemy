@@ -10,7 +10,7 @@ export class FormComponent {
 
   @Output() newQuotation = new EventEmitter<Quotation>();
 
-  showForm = true;
+  showForm = false;
   quotation: Quotation = {author:"", sentence: "", votes: 0};
 
   onSwitchForm(): void{
