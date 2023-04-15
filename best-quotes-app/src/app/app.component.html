@@ -1,21 +1,11 @@
-<app-navbar></app-navbar>
+<app-navbar title="Najlepsze cytaty"></app-navbar>
 
 <div class="container q-container">
   <!--Dodawanie cytatu-->
-  <button class="btn-floating teal add-button" (click)="onSwitchForm()">
+  <button class="btn-floating teal add-button">
     <i class="material-icons">add</i>
   </button>
-  <div class="row edit-row" [class.drawer]="showForm">
-    <div class="input-field col s4">
-      <input type="text" placeholder="Autor" [(ngModel)]="quotation.author" />
-    </div>
-    <div class="input-field col s6">
-      <input type="text" placeholder="Cytat" [(ngModel)]="quotation.sentence" />
-    </div>
-    <div class="input-field col s2">
-      <button class="btn small" (click)="addQuotation()">Dodaj</button>
-    </div>
-  </div>
+  <app-form (newQuotation)="onNewQuotation($event)"></app-form>
   <!-- Koniec dodawania cytatu -->
 
   <div class="row">
@@ -50,19 +40,8 @@
 
     <!-- Sekcja rankigów -->
     <div class="col s4">
-      <app-ranking [quotes]="quotes"></app-ranking>
-      <div class="col s12">
-        <h5>Najgorsze</h5>
-        <div class="collection">
-          <ng-container *ngFor="let quotation of quotes">
-            <p class="collection-item" *ngIf="quotation.votes<0">
-              <span class="blue lighten-4 badge">{{quotation.votes}}</span>
-              {{quotation.sentence}}<br />
-              <span class="blue-text">{{quotation.author}}</span>
-            </p>
-          </ng-container>
-        </div>
-      </div>
+      <app-ranking [quotes]="bestQuotes()" title="Najlepsze cytaty"></app-ranking>
+      <app-ranking [quotes]="worstQuotes()" title="Najgorsze cytaty"></app-ranking>
     </div>
     <!-- Sekcja rankigów -->
   </div>
