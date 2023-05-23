@@ -3,15 +3,9 @@ img {
     height: 348px;
   }
   
-  .grid {
-    display: flex;
-    flex-flow: row wrap;
-    margin: 0 -5px; /* remove the inital 5px space */
-    width: auto;
-  }
   .grid__item {
     max-width: 234px;
-    padding: 0 5px; /* should be same as the negative margin above. */
+    padding: 0 5px;
   }
   
   .card-content {
@@ -20,6 +14,10 @@ img {
   
   .card-title {
     width: 100%;
+  }
+  
+  .black-text:hover {
+    font-weight: bold;
   }
   
   * {
