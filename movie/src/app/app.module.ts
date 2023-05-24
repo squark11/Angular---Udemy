@@ -10,6 +10,7 @@ import { MoviesInCategoryComponent } from './pages/categories/movies-in-category
 import { MovieDetailsComponent } from './pages/movies/movie-details/movie-details.component';
 import { MovieCoverComponent } from './shared/movie-cover/movie-cover.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     MovieCoverComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     NgbModule

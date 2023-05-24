@@ -1,5 +1,7 @@
+import { Location } from '@angular/common';
 import { Component } from '@angular/core';
-import { Observable } from 'rxjs';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
+import { Observable, switchMap } from 'rxjs';
 import { Movie } from 'src/app/models/movie';
 import { HttpService } from 'src/app/services/http.service';
 
@@ -11,12 +13,20 @@ import { HttpService } from 'src/app/services/http.service';
 export class MovieDetailsComponent {
   movieDetails: Observable<Movie>;
 
-  constructor(private http: HttpService) {
+  constructor(
+    private http: HttpService, 
+    private route: ActivatedRoute,
+    private location:Location
+    ) {
   }
 
   ngOnInit() {
+    this.movieDetails = this.route.paramMap.pipe(
+      switchMap((params: ParamMap)=> this.http.getMovie(params.get('id')))
+    )
   }
 
   goToMovies() {
+    this.location.back();
   }
 }

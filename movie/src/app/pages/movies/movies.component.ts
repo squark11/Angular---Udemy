@@ -14,5 +14,6 @@ export class MoviesComponent {
 
   ngOnInit() {
     this.movies = this.http.getMovies();
+    console.log("INITED");
   }
 }
