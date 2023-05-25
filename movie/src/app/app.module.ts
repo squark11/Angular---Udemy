@@ -11,6 +11,9 @@ import { MovieDetailsComponent } from './pages/movies/movie-details/movie-detail
 import { MovieCoverComponent } from './shared/movie-cover/movie-cover.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
+import { YearsComponent } from './pages/years/years/years.component';
+import { MoviesInYearComponent } from './pages/years/movies-in-year/movies-in-year/movies-in-year.component';
+import { HttpTestComponent } from './pages/http-test/http-test/http-test.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { HttpClientModule } from '@angular/common/http';
     PageNotFoundComponent,
     MoviesInCategoryComponent,
     MovieDetailsComponent,
-    MovieCoverComponent
+    MovieCoverComponent,
+    YearsComponent,
+    MoviesInYearComponent,
+    HttpTestComponent
   ],
   imports: [
     HttpClientModule,

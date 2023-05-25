@@ -5,6 +5,9 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
 import { CategoriesComponent } from './pages/categories/categories.component';
 import { MovieDetailsComponent } from './pages/movies/movie-details/movie-details.component';
 import { MoviesInCategoryComponent } from './pages/categories/movies-in-category/movies-in-category.component';
+import { YearsComponent } from './pages/years/years/years.component';
+import { MoviesInYearComponent } from './pages/years/movies-in-year/movies-in-year/movies-in-year.component';
+import { HttpTestComponent } from './pages/http-test/http-test/http-test.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/movies', pathMatch: 'full'},
@@ -12,7 +15,11 @@ const routes: Routes = [
   {path: 'movie/:id', component: MovieDetailsComponent},
   {path: 'categories', component: CategoriesComponent},
   {path: 'category/:category', component: MoviesInCategoryComponent},
+  {path: 'years', component:YearsComponent},
+  {path: 'year/:year', component:MoviesInYearComponent},
+  {path: 'http-test', component:HttpTestComponent},
   {path: '**', component: PageNotFoundComponent},
+
 ];
 
 @NgModule({
